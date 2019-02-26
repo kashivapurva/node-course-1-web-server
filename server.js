@@ -40,6 +40,14 @@ server.get('/',(req,res)=>{
     message:"welcome to home page"
   })
 });
+server.get('/projects',(req,res)=>{
+  res.render( "projects.hbs", {
+    pagetitle :"portfolio page"
+    //currentyear: new Date().getFullYear(),
+
+  })
+});
+
 
 server.get('/about',(req,res)=>{       //route and handler(request handler)
   res.render('about.hbs', {
