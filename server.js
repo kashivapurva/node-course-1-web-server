@@ -1,6 +1,9 @@
 const express = require('express');
 const hbs = require('hbs');
 const fs=require('fs');
+
+const port=process.env.PORT || 3000;
+
 var server = express();
 hbs.registerHelper('noop', ()=>{
   return new Date().getFullYear();
@@ -52,6 +55,6 @@ server.get('/bed',(req,res)=>{s
   errorMessage: 'unable to full fil ur request'
   });
 });
-server.listen(3000 ,()=>{
-console.log("server is up ready to go")//terminal pe msg print hoga
+server.listen(port ,()=>{
+console.log(`server is up ready to go ${port}`)//terminal pe msg print hoga
 });
